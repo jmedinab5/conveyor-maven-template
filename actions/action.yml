@@ -16,6 +16,7 @@ jobs:
             ${{ runner.os }}-maven-
       - run: mvn ${MAVEN_COMPILE_CLI_OPTS} compile
         shell: bash
+      - run: mvn ${MAVEN_COMPILE_CLI_OPTS} install
   
   maven-tests:
     runs-on: ubuntu-latest
