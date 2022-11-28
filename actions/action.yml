@@ -1,0 +1,19 @@
+name: 'Conveyor Maven Template'
+description: 'Conveyor Maven workflow with Github Actions'
+# inputs:
+#   who-to-greet:  # id of input
+#     description: 'Who to greet'
+#     required: true
+#     default: 'World'
+# outputs:
+#   random-number:
+#     description: "Random number"
+#     value: ${{ steps.random-number-generator.outputs.random-number }}
+runs:
+  using: "composite"
+  env:
+    MAVEN_COMPILE_CLI_OPTS: "--batch-mode --update-snapshots --errors --fail-at-end -Dstyle.color=always"
+  steps:
+    - uses: actions/checkout@v2
+    - run: mvn ${MAVEN_COMPILE_CLI_OPTS} compile
+      shell: bash
