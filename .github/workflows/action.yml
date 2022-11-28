@@ -1,4 +1,5 @@
 name: 'Conveyor Maven Template'
+on: push
 description: 'Conveyor Maven workflow with Github Actions'
 runs:
   using: "composite"
