@@ -30,4 +30,11 @@ jobs:
             ${{ runner.os }}-maven-
       - run: mvn ${MAVEN_COMPILE_CLI_OPTS} install
         shell: bash
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: jars
+          path: |
+            ./target
+            ./*/target
     needs: [maven-compile]
