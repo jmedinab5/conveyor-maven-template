@@ -1,6 +1,6 @@
 name: 'Conveyor Maven Template'
 on: [workflow_call]
-description: 'Conveyor Maven workflow with Github Actions'
+#description: 'Conveyor Maven workflow with Github Actions'
 # runs:
 #   using: "composite"
 
