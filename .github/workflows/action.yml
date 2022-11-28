@@ -2,7 +2,6 @@ name: 'Conveyor Maven Template'
 on: [workflow_call]
 jobs:
   maven-compile:
-    id: compile
     runs-on: ubuntu-latest
     env:
       MAVEN_COMPILE_CLI_OPTS: "--batch-mode --update-snapshots --errors --fail-at-end -Dstyle.color=always"
@@ -31,4 +30,4 @@ jobs:
             ${{ runner.os }}-maven-
       - run: mvn ${MAVEN_COMPILE_CLI_OPTS} install
         shell: bash
-    needs: [compile]
+    needs: [maven-compile]
